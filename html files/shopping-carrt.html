@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Корзина</title>
+    <link rel='stylesheet' href='../assets/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='../assets/css/owl.carousel.min.css'>
+    <link rel='stylesheet' href='../assets/css/animated.css'>
+    <link rel='stylesheet' href='../assets/css/font-awesome.css'>
+    <link rel='stylesheet' href='../assets/css/ui.css'>
+    <link rel='stylesheet' href='../assets/css/jquery.mmenu.all.css'>
+    <link rel='stylesheet' href='../assets/css/flaticon.css'>
+    <link rel='stylesheet' href='../assets/css/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i;Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+<body class="shoping-cart">
+<header class="header header-style2">
+    <div class="header-mid">
+        <div class="container">
+            <div class="header-mid-left">
+                <p class="wellcome-to">Добро пожаловать на  Bookworm</p>
+                <p class="register-or-login">
+                    <a href="registr-form.html" class="register">Регистрация</a>
+                    или
+                    <a href="#" class="login">Войти</a>
+                </p>
+            </div>
+            <div class="header-mid-right">
+                <div class="header-mid-right-content">
+                    <a href="#">
+                        <i class="flaticon-user-outline"></i>
+                        Мой аккаунт
+                    </a>
+                </div>
+                <div class="header-mid-right-content">
+                    <a href="#">
+                        <i class="flaticon-like"></i>
+                        Избранное
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header-bottom" style="background: white;">
+        <div class="container" style="background: white;">
+            <div class="header-bottom-left">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <img src="../assets/images/bookwarm.png" alt="logo">
+                    </a>
+                </h1>
+                <div class="header-search">
+                    <form action="#" class="form form-search-header">
+
+                        <input type="text" placeholder="Поиск...">
+                        <button class="button-search"><i class="flaticon-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="header-bottom-right">
+                <div class="header-bottom-right-content">
+                    <a href="#">
+                        <i class="flaticon-like"></i>
+                        Избранное
+                    </a>
+                </div>
+                <div class="header-bottom-right-content cart-menu-relative">
+                    <div class="cart-menu">
+                        <a href="#">
+                            <i class="flaticon-commerce"></i>
+                            Корзина
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <p class="cart-amount">6</p>
+                        </a>
+                    </div>
+                    <div class="cart-hover">
+                        <div class="cart-hover-title">Ваш заказ <span>Цена</span></div>
+                        <ul class="list-hover-cart">
+                            <li class="hover-cart-item">
+                                <a href="#" class="img-hover-cart">
+                                    <img src="../assets/images/img-hover-cart.jpg" alt="img-hover-cart" width="75" height="89">
+                                    <span class="delete-product-hover-cart"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                                </a>
+                                <div class="text-hover-cart">
+                                    <a href="#" class="name-hover-cart">Человек на луне</a>
+                                    <div class="quantity">
+                                        <p class="quanlity-hover-cart">Колличество: <span>1</span></p>
+                                    </div>
+                                </div>
+                                <div class="price-hover-cart">$150</div>
+                            </li>
+                        </ul>
+                        <div class="subtotal-hover-cart">Стоимость <span>$150</span></div>
+                        <div class="button-cart-hover">
+                            <a href="#" class="go-to-cart button">Перейти к корзине</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-primary">
+        <div class="container">
+            <a href="#categories-menu" class="menu-button categories-menu-button">
+                Категории<span class="flaticon-bars"></span>
+            </a>
+            <nav class="menu-item has-mega-menu" id="categories-menu">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#">Категории</a>
+                        <span class="click-categories flaticon-bars"></span>
+                        <div class="category-drop-list">
+                            <div class="category-drop-list-inner">
+                                <ul class="sub-menu sub-menu-open">
+                                    <li class="menu-item"><a href="#">Приключения</a></li>
+                                    <li class="menu-item"><a href="#">Поэзия</a></li>
+                                    <li class="menu-item"><a href="#">Фэнтези</a></li>
+                                    <li class="menu-item"><a href="#">Фантастика</a></li>
+                                    <li class="menu-item"><a href="#">Религия</a></li>
+                                    <li class="menu-item"><a href="#">Учебная</a></li>
+                                    <li class="menu-item"><a href="#">Молодежная</a></li>
+                                    <li class="menu-item"><a href="#">Словари</a></li>
+                                    <li class="menu-item"><a href="#">История</a></li>
+                                    <li class="menu-item"><a href="#">Справочники</a></li>
+                                    <li class="menu-item"><a href="#">Кулинария</a></li>
+                                </ul>
+                                <span class="more-categories open-cate">Больше категорий</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#primary-navigation" class="menu-button primary-navigation-button">
+                <span class="flaticon-bars"></span>Главное меню
+            </a>
+            <nav id="primary-navigation" class="site-navigation main-menu">
+                <ul id="primary-menu" class="menu">
+                    <li class="menu-item active"><a href="">Главная</a></li>
+                    <li class="menu-item"><a href="#">Товары</a></li>
+                    <li class="menu-item"><a href="#">Контакты</a></li>
+                    <li class="menu-item "><a href="#">О нас</a></li>
+                    <li class="menu-item"><a href="blog.html">Отзывы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+    <!-- End .banner -->
+    <div class="main-content container ">
+        <h4 class="title-page">Корзина</h4>
+        <div class="shop-table-content container">
+            <form method="post" action="#" class="shoping-form">
+
+                <div class="div-table-cart">
+                    <table class="shop_table cart">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">&nbsp;Товар</th>
+                                <th class="product-name">Название</th>
+                                <th class="product-edit">Добавить</th>
+                                <th class="product-price">Цена</th>
+                                <th class="product-quantity">Колличество</th>
+                                <th class="product-subtotal">Окончательная стоимость</th>
+                                <th class="product-remove">Удалить&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cart_item">
+                                <td class="product-thumbnail" data-title="">
+                                    <a href="#"><img height="150" width="185" alt="s_c" class="attachment-shop_thumbnail wp-post-image" src="https://tlum.ru/uploads/3d57aea6c834638539bd6e3031b58183564c71dba4a087ba5cdcaf00f286886e.jpeg"></a>
+                                </td>
+                                <td class="product-name" data-title="Product Name">
+                                    <a href="#">Хроники Нарнии: Лев, Колдунья и плотянной шкаф</a>
+                                </td>
+                                <td class="edit"><a href="#">Добавить</a></td>
+                                <td class="product-price" data-title="Unit Price">
+                                    <span class="amount">$168.00</span>
+                                </td>
+                                <td class="product-quantity" data-title="Qty">
+                                    <div class="quantity buttons_added">
+                                        <input type="text" class="input-text qty text" title="Qty" value="1" name="qty">
+                                    </div>
+                                </td>
+                                <td class="product-subtotal" data-title="Subtotal">
+                                    <span class="amount">$168.00</span>
+                                </td>
+                                <td class="product-remove" data-title="Remove">
+                                    <a title="Remove this item" class="remove" href="#">×</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="button-cart">
+                        <a class="button button-check-out" href="#">Очистить корзину</a>
+                        <a class="button button-check-out" href="#">Обновить корзину</a>
+                        <a class="button button-check-out" href="#">Продолжить покупки</a>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="div-icon-box">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="icon-box style1">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <i class="flaticon-umbrella"></i>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="icon-box-content">
+                                    <h4>Безопастность</h4>
+                                    <p>Безопастные платежи и быстрая обработка заказов </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-box style1">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <i class="flaticon-return-of-investment"></i>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="icon-box-content">
+                                    <h4>Обмен и возврат</h4>
+                                    <p>Гарантия возврата средств или обмена товара </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-box style1">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <i class="flaticon-transport"></i>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="icon-box-content">
+                                    <h4>Доставка</h4>
+                                    <p>Бесплатная доставка по все территории РФ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer" style="background-color: #ffffff">
+        <div class="container">
+            <div class="footer-bottom">
+                <ul class="menu-footer-bottom">
+                    <li class="menu-footer-bottom-item"><a href="#">Промоушен</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Мои заказы</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Помощь</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Карта сайта</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Сервис</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Самые популярные</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Бестселлеры</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Новые товары</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Специальные предложения</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Акции</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Наш магазин</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Скидки</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Блог</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Оплата</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Шопинг</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Возврат</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">FAQ</a></li>
+                    <li class="menu-footer-bottom-item"><a href="#">Контакты</a></li>
+                </ul>
+                <div class="copyright">
+                    <i class="fa fa-copyright" aria-hidden="true"></i>
+                    2018 <a href="#">Bookworm</a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="backtotop ts-block"><span class="pulser"> Top</span></a>
+    </footer>
+
+            <!--end footer-->
+    <script type='text/javascript' src='../assets/js/jquery.min.js'></script>
+    <script type='text/javascript' src='../assets/js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='../assets/js/wow.min.js'></script>
+    <script type='text/javascript' src='../assets/js/owl.carousel.min.js'></script>
+    <script type='text/javascript' src='../assets/js/jquery.appear.min.js'></script>
+    <script type='text/javascript' src='../assets/js/jquery.countTo.js'></script>
+    <script type='text/javascript' src='../assets/js/ui.js'></script>
+    <script type='text/javascript' src='../assets/js/jquery.bxslider.min.js'></script>
+    <script type='text/javascript' src='../assets/js/jquery.mmenu.all.min.js'></script>
+    <script type='text/javascript' src='../assets/js/chosen.jquery.min.js'></script>
+    <script type='text/javascript' src='../assets/js/jquery.countdown.js'></script>
+    <script type='text/javascript' src='../assets/js/frontend.js'></script>
+</body>
+</html>
