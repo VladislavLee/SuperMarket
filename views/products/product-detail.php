@@ -1,6 +1,4 @@
-<?php require_once '../layouts/header.php' ?>
-
-
+<?php require_once ROOT.'/views/layouts/header.php' ?>
 <div class="categories main-content">
     <div class="container">
         <div class="breadcrumb-sidebar">
@@ -22,34 +20,32 @@
                 <div class="row">
                     <div class="col-md-5">
                         <figure class="img-product">
-                            <img src="https://pictures.abebooks.com/JFERNANDEZ/22516895871.jpg" alt="product" height="536" width="467">
+                            <img src="../../assets/images/img-detail.jpg" alt="product" height="536" width="467">
                             <div class="img-room"><img src="../../assets/images/room.jpg" alt="room" height="32" width="32"></div>
                         </figure>
                         <div class="featue-slide supermartket-owl-carousel" data-number="3" data-margin="15" data-navcontrol="yes">
                             <div class="feature-slide-item">
-                                <figure><img src="https://pictures.abebooks.com/JFERNANDEZ/22516895871.jpg" alt="feature" width="126" height="143"></figure>
+                                <figure><img src="../../assets/images/sli-dt1.jpg" alt="feature" width="126" height="143"></figure>
                             </div>
                             <div class="feature-slide-item">
-                                <figure><img src="https://pictures.abebooks.com/JFERNANDEZ/22516895871.jpg" alt="feature" width="126" height="143"></figure>
+                                <figure><img src="../../assets/images/sli-dt2.jpg" alt="feature" width="126" height="143"></figure>
                             </div>
                             <div class="feature-slide-item">
-                                <figure><img src="https://pictures.abebooks.com/JFERNANDEZ/22516895871.jpg" alt="feature" width="126" height="143"></figure>
+                                <figure><img src="../../assets/images/sli-dt3.jpg" alt="feature" width="126" height="143"></figure>
                             </div>
                             <div class="feature-slide-item">
-                                <figure><img src="https://pictures.abebooks.com/JFERNANDEZ/22516895871.jpg" alt="feature" width="126" height="143"></figure>
+                                <figure><img src="../../assets/images/sli-dt2.jpg" alt="feature" width="126" height="143"></figure>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="single-product-content">
-                            <h3 class="product-title">Книга</h3>
-                            <a href="#" class="write">Оставить свой отзыв</a>
-                            <p class="product-cost">$200.00</p>
-                            <p class="stock">Статус:<span><i class="fa fa-check-square-o" aria-hidden="true"></i>В наличии</span></p>
+                            <h3 class="product-title"><?php echo($productsItem{'name'}); ?></h3>
+                            <a href="#" class="write">Оставить отзыв</a>
+                            <p class="product-cost"><?php echo($productsItem{'price'}); ?></p>
+                            <p class="stock">В наличие:<span><i class="fa fa-check-square-o" aria-hidden="true"></i>есть</span></p>
                             <div class="desc-product-title">Краткое описание</div>
-                            <div class="desc-product">Cum altera mandamus in, mea verear disputationi et.
-                                Vel regione discere ut, legere expetenda ut eos. In nam nibh invenire similique.
-                                Atqui mollis ea his, ius graecis accommodare te. No eam tota nostrum cotidieque.
+                            <div class="desc-product"><?php echo( $productsItem{'preview'} ); ?>
                             </div>
 
                             <div class="product-box-bottom">
@@ -109,15 +105,15 @@
                 <div class="tab-pane" id="3a">
                     <div id="reviews">
                         <div id="comments">
-                            <h2 class="review-title">2 отзыва от ArchitectMade Oscar Figure</h2>
+                            <h2 class="review-title">2 reviews for ArchitectMade Oscar Figure</h2>
                             <ol class="commentlist">
                                 <li class="comment">
                                     <div class="comment_container">
-                                        <img alt="rev" src="../../assets/images/p1.jpg" width="100" height="100" class="avatar">
+                                        <img alt="rev" src="assets/images/p1.jpg" width="100" height="100" class="avatar">
                                         <div class="comment-text">
                                             <div class="meta">
                                                 <strong>Stuart</strong>-
-                                                <time  datetime="2013-06-07T13:01:25+00:00">Июнь 7, 2018</time>
+                                                <time  datetime="2013-06-07T13:01:25+00:00">June 7, 2013</time>
                                                 <div class="rating" title="Rated 5 out of 5">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
@@ -134,11 +130,11 @@
                                 </li>
                                 <li class="comment">
                                     <div class="comment_container">
-                                        <img alt="rev" src="../../assets/images/p2.jpg" width="100" height="100" class="avatar">
+                                        <img alt="rev" src="assets/images/p2.jpg" width="100" height="100" class="avatar">
                                         <div class="comment-text">
                                             <div class="meta">
                                                 <strong>Stuart</strong>-
-                                                <time  datetime="2013-06-07T13:01:25+00:00">Июнь 7, 2013</time>
+                                                <time  datetime="2013-06-07T13:01:25+00:00">June 7, 2013</time>
                                                 <div class="rating" title="Rated 5 out of 5">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
@@ -157,10 +153,10 @@
                         </div>
                         <div id="review_form">
                             <div class="comment-respond">
-                                <h3 class="comment-reply-title">Добавить отзыв</h3>
+                                <h3 class="comment-reply-title">Add a review</h3>
                                 <form class="comment-form">
                                     <p>
-                                        <label>Имя</label>
+                                        <label>Name</label>
                                         <input type="text">
                                     </p>
                                     <p>
@@ -168,11 +164,11 @@
                                         <input type="email">
                                     </p>
                                     <p>
-                                        <label>Комментарий</label>
+                                        <label>Comment</label>
                                         <textarea rows="3"></textarea>
                                     </p>
                                     <p>
-                                        <a class="button orange" href="#">Отправить</a>
+                                        <a class="button orange" href="#">Submit</a>
                                     </p>
                                 </form>
                             </div>
@@ -181,25 +177,133 @@
                 </div>
             </div>
         </div>
+        <div class="detail-slide relates">
+            <h3 class="title-detail-slide">Другие товары</h3>
+            <div class="supermartket-owl-carousel" data-number="5" data-margin="30" data-navcontrol="yes">
+                <div class="product-box">
+                    <div class="product-box-content">
+                        <figure class="img-product">
+                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
+                            <a href="#" class="flaticon-search"></a>
+                        </figure>
+                        <div class="product-box-text">
+                            <a href="#" class="product-name">Men's Skagen Watch</a>
+                            <p class="product-cost">$200.00</p>
+                            <div class="product-box-bottom">
+                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
+                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
+                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="product-box">
+                    <div class="product-box-content">
+                        <figure class="img-product">
+                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
+                            <a href="#" class="flaticon-search"></a>
+                        </figure>
+                        <div class="product-box-text">
+                            <a href="#" class="product-name">Men's Skagen Watch</a>
+                            <p class="product-cost">$200.00</p>
+                            <div class="product-box-bottom">
+                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
+                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
+                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="product-box">
+                    <div class="product-box-content">
+                        <figure class="img-product">
+                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
+                            <a href="#" class="flaticon-search"></a>
+                        </figure>
+                        <div class="product-box-text">
+                            <a href="#" class="product-name">Men's Skagen Watch</a>
+                            <p class="product-cost">$200.00</p>
+                            <div class="product-box-bottom">
+                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
+                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
+                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="product-box">
+                    <div class="product-box-content">
+                        <figure class="img-product">
+                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
+                            <a href="#" class="flaticon-search"></a>
+                        </figure>
+                        <div class="product-box-text">
+                            <a href="#" class="product-name">Men's Skagen Watch</a>
+                            <p class="product-cost">$200.00</p>
+                            <div class="product-box-bottom">
+                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
+                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
+                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="product-box">
+                    <div class="product-box-content">
+                        <figure class="img-product">
+                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
+                            <a href="#" class="flaticon-search"></a>
+                        </figure>
+                        <div class="product-box-text">
+                            <a href="#" class="product-name">Men's Skagen Watch</a>
+                            <p class="product-cost">$200.00</p>
+                            <div class="product-box-bottom">
+                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
+                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
+                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="product-box">
+                    <div class="product-box-content">
+                        <figure class="img-product">
+                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
+                            <a href="#" class="flaticon-search"></a>
+                        </figure>
+                        <div class="product-box-text">
+                            <a href="#" class="product-name">Men's Skagen Watch</a>
+                            <p class="product-cost">$200.00</p>
+                            <div class="product-box-bottom">
+                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
+                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
+                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
 
-        <?php require_once '../layouts/icon-box.php' ?>
 
-
-
-
-
-
+        <?php require_once ROOT.'/views/layouts/icon-box.php' ?>
 
     </div>
-
 </div>
 
 
 
 
+<?php require_once ROOT.'/views/layouts/footer.php' ?>
 
 
-<?php require_once '../layouts/footer.php' ?>
+

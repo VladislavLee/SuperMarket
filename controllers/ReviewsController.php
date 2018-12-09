@@ -6,22 +6,31 @@
  * Time: 22:13
  */
 
+include_once ROOT.'/models/Reviews.php';
+
 class ReviewsController{
 
-    public  function actionReviews(){
+    public  function actionList(){
 
-        echo  ('3242342342432424');
+        $reviewsList = array();
+        $reviewsList = Reviews :: GetReviewsList();
+
+        require_once (ROOT.'/views/reviews/reviews.php');
 
         return true;
     }
 
 
+    public function actionItem($id){
 
+        $id = intval($id);
 
-    public function actionReview(){
+        if($id){
+            $reviewItem = Reviews:: GetReviewItemById($id);
 
-        echo ("1 rew");
+            require_once (ROOT.'/views/reviews/reviews.php');
 
+        }
         return true;
     }
 

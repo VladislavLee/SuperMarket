@@ -1,29 +1,28 @@
-
 <!DOCTYPE html>
 <html lang='en' xmlns='http://www.w3.org/1999/xhtml'>
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title> Bookwarm</title>
-    <link rel='stylesheet' href='../../assets/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='../../assets/css/owl.carousel.min.css'>
-    <link rel='stylesheet' href='../../assets/css/animated.css'>
-    <link rel='stylesheet' href='../../assets/css/font-awesome.css'>
-    <link rel='stylesheet' href='../../assets/css/ui.css'>
-    <link rel='stylesheet' href='../../assets/css/jquery.mmenu.all.css'>
-    <link rel='stylesheet' href='../../assets/css/flaticon.css'>
-    <link rel='stylesheet' href='../../assets/css/style.css'>
+    <title>Product Detail</title>
+    <link rel='stylesheet' href='/Project/SuperMarket/assets/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/Project/SuperMarket/assets/css/owl.carousel.min.css'>
+    <link rel='stylesheet' href='/Project/SuperMarket/assets/css/animated.css'>
+
+    <link rel='stylesheet' href='/Project/SuperMarket/assets/css/font-awesome.css'>
+    <link rel='stylesheet' href='/Project/SuperMarket/assets/css/ui.css'>
+    <link rel='stylesheet' href='/Project/SuperMarket/assets/css/jquery.mmenu.all.css'>
+    <link rel='stylesheet' href='/Project/SuperMarket/assets/css/flaticon.css'>
+    <link rel='stylesheet' href='/Project/SuperMarket/assets/css/style.css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i;Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 </head>
-<body>
-
+<body class="categories-page product-detail">
 <header class="header header-style2">
     <div class="header-mid">
         <div class="container">
             <div class="header-mid-left">
                 <p class="wellcome-to">Добро пожаловать на  Bookworm</p>
                 <p class="register-or-login">
-                    <a href="../../html%20files/registr-form.html" class="register">Регистрация</a>
+                    <a href="#" class="register">Регистрация</a>
                     или
                     <a href="#" class="login">Войти</a>
                 </p>
@@ -46,17 +45,17 @@
 
         </div>
     </div>
-
+    </div>
     <div class="header-bottom">
         <div class="container">
             <div class="header-bottom-left">
                 <h1 class="logo">
-                    <a href="../../html%20files/index.html">
-                        <img src="../../assets/images/bookwarm.png" alt="logo">
+                    <a href="index.html">
+                        <img src="../../assets/images/logo.png" alt="logo">
                     </a>
                 </h1>
                 <div class="header-search">
-                    <form action="#" class="form form-search-header">
+                    <form action="form.php" class="form form-search-header">
 
                         <input type="text" placeholder="Поиск...">
                         <button class="button-search"><i class="flaticon-search"></i></button>
@@ -84,11 +83,11 @@
                         <ul class="list-hover-cart">
                             <li class="hover-cart-item">
                                 <a href="#" class="img-hover-cart">
-                                    <img src="http://www.murderslim.com/ReviewsTileShakespeareNeverDidThis.jpg" alt="img-hover-cart" width="75" height="89">
+                                    <img src="../../assets/images/img-hover-cart.jpg" alt="img-hover-cart" width="75" height="89">
                                     <span class="delete-product-hover-cart"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
                                 </a>
                                 <div class="text-hover-cart">
-                                    <a href="#" class="name-hover-cart">Книга</a>
+                                    <a href="#" class="name-hover-cart">Men's Skagen Watch</a>
                                     <div class="quantity">
                                         <p class="quanlity-hover-cart">Колличество: <span>1</span></p>
                                     </div>
@@ -146,7 +145,7 @@
                     <li class="menu-item"><a href="#">Товары</a></li>
                     <li class="menu-item"><a href="#">Контакты</a></li>
                     <li class="menu-item "><a href="#">О нас</a></li>
-                    <li class="menu-item"><a href="../../html%20files/blog.html">Отзывы</a></li>
+                    <li class="menu-item"><a href="blog.html">Отзывы</a></li>
                 </ul>
             </nav>
         </div>

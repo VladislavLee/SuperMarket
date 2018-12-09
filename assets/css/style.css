@@ -5171,7 +5171,7 @@ a.button:hover {
     .categories-page .product-box-bottom a.refresh-product i {
       font-weight: 100 !important; }
     .categories-page .product-box-bottom a.add-to-cart {
-      width: 60%; }
+      width: 55% }
     .categories-page .product-box-bottom a:hover {
       color: #fff;
       border-color: #ff8400;
@@ -5334,7 +5334,8 @@ a.button:hover {
   .categories-list .product-box-bottom a {
     font-size: 14px;
     line-height: 35px;
-    background-color: #fff; }
+    /*background-color: #fff; */
+  }
     .categories-list .product-box-bottom a i {
       font-size: 18px; }
 

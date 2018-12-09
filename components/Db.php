@@ -9,7 +9,7 @@
 class Db
 {
     public static function getConnection(){
-        $parametersRoot = ROOT.'/config/db_parameters.php';
+        $parametersRoot = ROOT.'/config/db_parametrs.php';
         $parameters = include($parametersRoot);
 
         $db = new PDO("mysql:host={$parameters['host']};dbname={$parameters['dbname']};charset=utf8;",$parameters['user'],$parameters['password'],[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
