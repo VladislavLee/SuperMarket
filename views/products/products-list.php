@@ -60,8 +60,11 @@
                                         <a href="#" class="write">Прочитать отзывы</a>
                                         <p class="product-cost">$<?php echo( $product{'price'} ); ?></p>
                                         <p class="desc-product"><?php echo( $product{'preview'} ); ?></p>
+
+
+
                                         <div class="product-box-bottom">
-                                            <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Добавить корзину</a>
+                                            <a href="#" data-id="<?php echo $product['id']; ?> " class="add-to-cart"><i class="flaticon-commerce"></i>В корзину</a>
                                             <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
                                             <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
                                         </div>
@@ -69,10 +72,6 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
-
-
-
                         </div>
                         <div class="panel-categories">
                             <div class="row">

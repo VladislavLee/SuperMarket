@@ -10,8 +10,10 @@
             <h3>Кабинет пользователя</h3>
 
 
+
             <ul>
-                <li><a href="/cabinet/edit">Редактировать данные</a></li>
+                <li><a href="/account/edit">Редактировать данные</a></li>
+                <li><a href="/user/logout/">выйти из аккаунта</a></li>
                 <!--<li><a href="/cabinet/history">Список покупок</a></li>-->
             </ul>
 

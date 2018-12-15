@@ -6,14 +6,18 @@
  * Time: 18:43
  */
 
+
 class IndexController{
 
     public function actionMain(){
 
-        echo "IndexController";
 
-        return true;
+
+        require_once(ROOT . '/views/layouts/header.php');
+        require_once (ROOT.'/views/index/content.php');
+        require_once(ROOT . '/views/layouts/footer.php');
     }
+
 
 
 }

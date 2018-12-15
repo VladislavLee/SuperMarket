@@ -19,21 +19,27 @@
 <header class="header header-style2">
     <div class="header-mid">
         <div class="container">
+            <?php if(User::isGuest()) : ?>
             <div class="header-mid-left">
                 <p class="wellcome-to">Добро пожаловать на  Bookworm</p>
                 <p class="register-or-login">
                     <a href="#" class="register">Регистрация</a>
                     или
-                    <a href="#" class="login">Войти</a>
+
+                    <a href="/user/login/" class="login">Войти</a>
+
                 </p>
             </div>
+            <?php else:  ?>
             <div class="header-mid-right">
+
                 <div class="header-mid-right-content">
-                    <a href="#">
+                    <a href="/account/">
                         <i class="flaticon-user-outline"></i>
                         Мой аккаунт
                     </a>
                 </div>
+
                 <div class="header-mid-right-content">
                     <a href="#">
                         <i class="flaticon-like"></i>
@@ -41,8 +47,16 @@
                     </a>
                 </div>
 
-            </div>
+                <div class="header-mid-right-content">
+                    <a href="/user/logout/">
+                        <i class="fa fa-sign-out" ></i>
+                        Выйти
+                    </a>
+                </div>
 
+
+            </div>
+            <?php endif; ?>
         </div>
     </div>
     </div>
@@ -71,11 +85,11 @@
                 </div>
                 <div class="header-bottom-right-content cart-menu-relative">
                     <div class="cart-menu">
-                        <a href="#">
+                        <a href="/cart/">
                             <i class="flaticon-commerce"></i>
                             Корзина
                             <i class="fa fa-caret-down" aria-hidden="true"></i>
-                            <p class="cart-amount">6</p>
+                            <p class="cart-amount"><?php echo Cart::countItems(); ?></p>
                         </a>
                     </div>
                     <div class="cart-hover">

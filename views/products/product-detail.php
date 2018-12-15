@@ -42,7 +42,7 @@
                         <div class="single-product-content">
                             <h3 class="product-title"><?php echo($productsItem{'name'}); ?></h3>
                             <a href="#" class="write">Оставить отзыв</a>
-                            <p class="product-cost"><?php echo($productsItem{'price'}); ?></p>
+                            <p class="product-cost">$<?php echo($productsItem{'price'}); ?></p>
                             <p class="stock">В наличие:<span><i class="fa fa-check-square-o" aria-hidden="true"></i>есть</span></p>
                             <div class="desc-product-title">Краткое описание</div>
                             <div class="desc-product"><?php echo( $productsItem{'preview'} ); ?>
@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
                                 <div class="button-detail">
-                                    <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Добавить в корзину</a>
+                                    <a href="#" data-id="<?php echo $productsItem['id']; ?> " class="add-to-cart"><i class="flaticon-commerce"></i>В корзину</a>
                                     <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
                                     <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
                                 </div>
@@ -162,6 +162,8 @@
         <div class="detail-slide relates">
             <h3 class="title-detail-slide">Другие товары</h3>
             <div class="supermartket-owl-carousel" data-number="5" data-margin="30" data-navcontrol="yes">
+
+                <?php foreach ($sliderProducts as $sliderItem): ?>
                 <div class="product-box">
                     <div class="product-box-content">
                         <figure class="img-product">
@@ -169,107 +171,20 @@
                             <a href="#" class="flaticon-search"></a>
                         </figure>
                         <div class="product-box-text">
-                            <a href="#" class="product-name">Men's Skagen Watch</a>
-                            <p class="product-cost">$200.00</p>
+                            <a href="#" class="product-name"><?php echo($sliderItem{'name'}); ?></a>
+                            <p class="product-cost">$<?php echo $sliderItem['price']; ?></p>
                             <div class="product-box-bottom">
-                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
+                                <a href="#" data-id="<?php echo $sliderItem['id']; ?> " class="add-to-cart"><i class="flaticon-commerce"></i>В корзину</a>
                                 <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
                                 <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
                             </div>
                         </div>
-
                     </div>
                 </div>
-                <div class="product-box">
-                    <div class="product-box-content">
-                        <figure class="img-product">
-                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
-                            <a href="#" class="flaticon-search"></a>
-                        </figure>
-                        <div class="product-box-text">
-                            <a href="#" class="product-name">Men's Skagen Watch</a>
-                            <p class="product-cost">$200.00</p>
-                            <div class="product-box-bottom">
-                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
-                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
-                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
-                            </div>
-                        </div>
+                <?php endforeach; ?>
 
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="product-box-content">
-                        <figure class="img-product">
-                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
-                            <a href="#" class="flaticon-search"></a>
-                        </figure>
-                        <div class="product-box-text">
-                            <a href="#" class="product-name">Men's Skagen Watch</a>
-                            <p class="product-cost">$200.00</p>
-                            <div class="product-box-bottom">
-                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
-                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
-                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="product-box-content">
-                        <figure class="img-product">
-                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
-                            <a href="#" class="flaticon-search"></a>
-                        </figure>
-                        <div class="product-box-text">
-                            <a href="#" class="product-name">Men's Skagen Watch</a>
-                            <p class="product-cost">$200.00</p>
-                            <div class="product-box-bottom">
-                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
-                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
-                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="product-box-content">
-                        <figure class="img-product">
-                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
-                            <a href="#" class="flaticon-search"></a>
-                        </figure>
-                        <div class="product-box-text">
-                            <a href="#" class="product-name">Men's Skagen Watch</a>
-                            <p class="product-cost">$200.00</p>
-                            <div class="product-box-bottom">
-                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
-                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
-                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="product-box-content">
-                        <figure class="img-product">
-                            <img src="../../assets/images/p1.jpg" alt="product" height="207" width="175">
-                            <a href="#" class="flaticon-search"></a>
-                        </figure>
-                        <div class="product-box-text">
-                            <a href="#" class="product-name">Men's Skagen Watch</a>
-                            <p class="product-cost">$200.00</p>
-                            <div class="product-box-bottom">
-                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Add To Cart</a>
-                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
-                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -281,6 +196,8 @@
 
     </div>
 </div>
+
+
 
 
 

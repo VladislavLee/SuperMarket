@@ -92,7 +92,7 @@ class UserController
             } else {
                 // Если данные правильные, запоминаем пользователя (сессия)
                 User::auth($userId);
-                var_dump($_POST['email']);
+
 
                 // Перенаправляем пользователя в закрытую часть - кабинет
                 header("Location: /account/");
@@ -122,7 +122,7 @@ class UserController
         unset($_SESSION["user"]);
 
         // Перенаправляем пользователя на главную страницу
-        header("Location: /");
+        header("Location: /products/");
     }
 
 }

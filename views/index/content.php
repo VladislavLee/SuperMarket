@@ -1,5 +1,5 @@
 
-<?php require_once '../layouts/header.php' ?>
+<?php require_once ROOT . '/views/layouts/header.php' ?>
 
 
 <div class="banner banner-home banner-home1">
@@ -317,4 +317,4 @@
 
 </div>
 
-<?php require_once '../layouts/footer.php' ?>
+<?php require_once ROOT . '/views/layouts/footer.php' ?>

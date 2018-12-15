@@ -25,6 +25,7 @@ class CabinetController
         return true;
     }
 
+
     /**
      * Action для страницы "Редактирование данных пользователя"
      */
@@ -69,7 +70,7 @@ class CabinetController
         }
 
         // Подключаем вид
-        require_once(ROOT . '/views/account/cabinet.php');
+        require_once(ROOT . '/views/account/edit .php');
         return true;
     }
 

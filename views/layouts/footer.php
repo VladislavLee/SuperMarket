@@ -47,6 +47,18 @@
 <script type='text/javascript' src='/assets/js/jquery.countdown.js'></script>
 <script type='text/javascript' src='/assets/js/frontend.js'></script>
 
+<script>
+    $(document).ready(function(){
+        $(".add-to-cart").click(function () {
+            var id = $(this).attr("data-id");
+            $.post("/cart/addAjax/"+id, {}, function (data) {
+                $(".cart-amount").html(data);
+            });
+            return false;
+        });
+    });
+</script>
+
 
 
 

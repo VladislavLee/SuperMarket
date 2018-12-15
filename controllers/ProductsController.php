@@ -30,22 +30,24 @@ class ProductsController{
         $categoryProducts = Products::GetProductsListByCategory($categoryId, $page);
         $categories = Category::GetCategoriesList();
 
-//        var_dump($categoryProducts);
         $total = Products::GetTotalProductsInCategory($categoryId);
 
 
-        ;        $pagination = new Pagination($total, $page, Products::SNOW_BY_DEFAULT, 'page-');
+        $pagination = new Pagination($total, $page, Products::SNOW_BY_DEFAULT, 'page-');
 
         require_once(ROOT . '/views/products/products-category.php');
         return true;
     }
 
 
-
     public function actionProduct($productId){
 
 
         $productsItem = Products::getProductItemById($productId);
+
+
+        $sliderProducts = Products::getRecommendedProducts();
+
 
 
         require_once (ROOT.'/views/products/product-detail.php');
