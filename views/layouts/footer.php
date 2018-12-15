@@ -34,18 +34,18 @@
     <a href="#" class="backtotop ts-block"><span class="pulser"> Top</span></a>
 </footer>
 <!--end footer-->
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/jquery.min.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/wow.min.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/owl.carousel.min.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/jquery.appear.min.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/jquery.countTo.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/ui.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/jquery.bxslider.min.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/jquery.mmenu.all.min.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/chosen.jquery.min.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/jquery.countdown.js'></script>
-<script type='text/javascript' src='/Project/SuperMarket/assets/js/frontend.js'></script>
+<script type='text/javascript' src='/assets/js/jquery.min.js'></script>
+<script type='text/javascript' src='/assets/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/assets/js/wow.min.js'></script>
+<script type='text/javascript' src='/assets/js/owl.carousel.min.js'></script>
+<script type='text/javascript' src='/assets/js/jquery.appear.min.js'></script>
+<script type='text/javascript' src='/assets/js/jquery.countTo.js'></script>
+<script type='text/javascript' src='/assets/js/ui.js'></script>
+<script type='text/javascript' src='/assets/js/jquery.bxslider.min.js'></script>
+<script type='text/javascript' src='/assets/js/jquery.mmenu.all.min.js'></script>
+<script type='text/javascript' src='/assets/js/chosen.jquery.min.js'></script>
+<script type='text/javascript' src='/assets/js/jquery.countdown.js'></script>
+<script type='text/javascript' src='/assets/js/frontend.js'></script>
 
 
 

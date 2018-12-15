@@ -8,7 +8,7 @@
 
 class Products{
 
-    const SNOW_BY_DEFAULT= 6;
+    const SNOW_BY_DEFAULT= 3;
 
      public static function GetLatestProducts($count= self::SNOW_BY_DEFAULT ){
 
@@ -41,21 +41,32 @@ class Products{
     }
 
 
-    public static function GetProductsListByCategory($categoryId){
+
+    public static function GetProductsListByCategory($categoryId=false ,$page ){
 
 
         if($categoryId) {
+
+            $page = intval($page);
+            $offset = ($page - 1) *self::SNOW_BY_DEFAULT;
+
             $db = Db::getConnection();
-            $categoryId = preg_replace( '/^.(.*)$/', '\1', $categoryId );
+
             $products = array();
 
-            $result = $db->query("SELECT id, name, price, image, preview, category_id, products_status
+          /*  $result = $db->query(" SELECT *
                                             FROM Products
                                             WHERE products_status = '1' AND category_id = '$categoryId'
-                                            ORDER BY id DESC
-                                             ");
+                                            ORDER BY id
+                                            LIMIT 3 
+                                           ");*/
+          $queryString = 'SELECT *
+                                        FROM Products WHERE category_id='."'".$categoryId."'"
+              .' LIMIT 3 OFFSET '.$page*3;
 
-
+            $result = $db->query($queryString);
+            echo "page = ".$page;
+            echo $queryString;
             $result->setFetchMode(PDO::FETCH_ASSOC);
 
             $i = 0;
@@ -73,28 +84,41 @@ class Products{
     }
 
 
-
-    public static function GetProductItemById($productId){
-
-
-
+    public static function getProductItemById($productId){
         if ($productId){
             $db = Db::getConnection();
-            $productId = preg_replace( '/^.(.*)$/', '\1', $productId );
 
-            $result = $db->query("SELECT id, name, price, image, preview, category_id, products_status
+            $result = $db->query("SELECT id, name, price, image, preview, category_id, description, products_status
                                             FROM Products
-                                            WHERE products_status = '1' AND id = '$productId'
-                                            ORDER BY id DESC
+                                            WHERE id = '$productId'
                                              ");
 
+
             $result->setFetchMode(PDO::FETCH_ASSOC);
+
 
 
 
             return $result->fetch();
         }
     }
+
+
+
+
+    public static function GetTotalProductsInCategory($categoryId)
+    {
+
+        $db = Db::getConnection();
+
+        $result = $db->query( "SELECT count(id) AS count FROM Products WHERE products_status='1' AND category_id = '$categoryId'");
+
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        $row = $result->fetch();
+        return $row['count'];
+    }
+
 
 
 }

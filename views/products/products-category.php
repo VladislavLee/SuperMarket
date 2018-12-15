@@ -37,12 +37,7 @@
                                 </div>
 
                                 <div class="col-md-9">
-                                    <div class="page-nav">
-                                        <div class="page-nav-item active">1</div>
-                                        <div class="page-nav-item">2</div>
-                                        <div class="page-nav-item">3</div>
-                                        <div class="page-nav-item"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                                    </div>
+                                    <?php echo $pagination ->get(); ?>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +53,7 @@
                                             <a href="#" class="flaticon-search"></a>
                                         </figure>
                                         <div class="product-box-text">
-                                            <a href="#" class="product-name"><?php echo( $product{'name'} ); ?></a>
+                                            <a href="#" class="product-name"><?php echo( $product{'id'} ); ?><?php echo( $product{'name'} ); ?></a>
                                             <a href="#" class="write">Прочитать отзывы</a>
                                             <p class="product-cost">$<?php echo( $product{'price'} ); ?></p>
                                             <p class="desc-product"><?php echo( $product{'preview'} ); ?>

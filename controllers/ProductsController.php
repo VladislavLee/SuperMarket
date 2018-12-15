@@ -6,8 +6,6 @@
  * Time: 18:43
  */
 
-include_once ROOT.'/models/Category.php';
-include_once ROOT.'/models/Products.php';
 
 class ProductsController{
 
@@ -24,27 +22,30 @@ class ProductsController{
         return true;
     }
 
-    public function actionCategory($categoryId){
 
-        $categories = array();
+
+    public function actionCategory($categoryId, $page = 'page-1'){
+        $page=substr($page,5,strlen($page)-1);
+        echo "page contr ".$page."/n";
+        $categoryProducts = Products::GetProductsListByCategory($categoryId, $page);
         $categories = Category::GetCategoriesList();
 
+//        var_dump($categoryProducts);
+        $total = Products::GetTotalProductsInCategory($categoryId);
 
 
-        $categoryProducts =array();
-        $categoryProducts = Products::GetProductsListByCategory($categoryId);
-
+        ;        $pagination = new Pagination($total, $page, Products::SNOW_BY_DEFAULT, 'page-');
 
         require_once(ROOT . '/views/products/products-category.php');
-
         return true;
     }
+
 
 
     public function actionProduct($productId){
 
 
-        $productsItem = Products::GetProductItemById($productId);
+        $productsItem = Products::getProductItemById($productId);
 
 
         require_once (ROOT.'/views/products/product-detail.php');

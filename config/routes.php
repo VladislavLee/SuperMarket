@@ -7,13 +7,23 @@
  */
 
 return array(
-    'reviews/([0-9]+)'=>'reviews/item/$1',
     'category/([0-9]+)'=> 'products/category/$1',
-    'products/([0-9]+)'=>'products/product/$1',
-
-
-
+    'category/([0-9]+)/page-([0-9]+)'=> 'products/category/$1/$2',
+    'products/([0-9]+)' =>'products/product/$1',
     'products'=>'products/list',
+
+
+    'user/register' => 'user/register',
+    'user/login' => 'user/login',
+    'account' => 'cabinet/index',
+
+
+
+    'reviews/([0-9]+)'=>'reviews/item/$1',
     'reviews' => 'reviews/list',
-    'main' => 'index/main',
+
+
+
+
+    'main' => 'products/list',
 );

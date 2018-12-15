@@ -56,7 +56,7 @@
                                         <a href="#" class="flaticon-search"></a>
                                     </figure>
                                     <div class="product-box-text">
-                                        <a href="#" class="product-name"><?php echo( $product{'name'} ); ?></a>
+                                        <a href="/products/<?php echo $product['id'];?>" class="product-name"><?php echo( $product{'name'} ); ?></a>
                                         <a href="#" class="write">Прочитать отзывы</a>
                                         <p class="product-cost">$<?php echo( $product{'price'} ); ?></p>
                                         <p class="desc-product"><?php echo( $product{'preview'} ); ?></p>

@@ -8916,6 +8916,15 @@ img {
   display: flex;
 }
 
+.agile-right-v2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  background: rgba(15, 16, 15, 0.89);
+
+}
+
 
 .agile-right {
   flex:1;
