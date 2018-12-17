@@ -1,4 +1,4 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <section>
     <div class="container">
@@ -13,7 +13,7 @@
                 </ol>
             </div>
 
-            <a href="/admin/product/create" class="btn btn-default back"><i class="fa fa-plus"></i> Добавить товар</a>
+            <a href="/admin/product/create" class="btn btn-default back" style="margin-bottom: 20px"><i class="fa fa-plus"></i> Добавить товар</a>
             
             <h4>Список товаров</h4>
 
@@ -27,6 +27,7 @@
                     <th>Редактировать</th>
                     <th>Удалить</th>
                 </tr>
+
                 <?php foreach ($productsList as $product): ?>
                     <tr>
                         <td><?php echo $product['id']; ?></td>

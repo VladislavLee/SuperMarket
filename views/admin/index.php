@@ -1,7 +1,7 @@
-<?php require_once ROOT.'/views/layouts/header.php' ?>
+<?php require_once ROOT.'/views/layouts/header_admin.php' ?>
 
 <section>
-    <div class="container">
+    <div class="container" style="margin-top: 50px">
         <div class="row">
 
             <br/>
@@ -29,4 +29,4 @@
 
 
 
-<?php require_once ROOT.'/views/layouts/footer.php' ?>
+

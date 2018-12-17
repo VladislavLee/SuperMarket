@@ -870,8 +870,8 @@ nav > ul > li.item-home .show-submenu {
   z-index: 5;
   display: none; }
   .header-style2 .has-mega-menu .category-drop-list .category-drop-list-inner {
-    height: 405px;
-    padding-bottom: 44px; }
+    /*height: 405px;*/
+    padding-bottom: 10px; }
     .header-style2 .has-mega-menu .category-drop-list .category-drop-list-inner > .sub-menu {
       height: calc(100%);
       padding: 0; }
@@ -4676,7 +4676,7 @@ a.button:hover {
     height: 35px; }
 
   .header-style2 .form-search-header input {
-    margin-top: 4px; } }
+    margin-top: 0; } }
 /* -------------------- */
 /*      end main        */
 /* -------------------- */

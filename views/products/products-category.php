@@ -29,16 +29,19 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="view-categories">
-
                                         <div class="click-list color-active">
                                             <i class="flaticon-squares-gallery-grid-layout-interface-symbol"></i>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-md-9">
-                                    <?php echo $pagination ->get(); ?>
+                                <div class="col-md-3">
+                                    <div class="page-nav">
+                                        <?php echo $pagination ->get(); ?>
+                                    </div>
                                 </div>
+
+
                             </div>
                         </div>
                         <div class="products-categories">
@@ -53,11 +56,10 @@
                                             <a href="#" class="flaticon-search"></a>
                                         </figure>
                                         <div class="product-box-text">
-                                            <a href="#" class="product-name"><?php echo( $product{'id'} ); ?><?php echo( $product{'name'} ); ?></a>
+                                            <a href="/products/<?php echo($product{'id'}); ?>" class="product-name"><?php echo( $product{'name'} ); ?></a>
                                             <a href="#" class="write">Прочитать отзывы</a>
                                             <p class="product-cost">$<?php echo( $product{'price'} ); ?></p>
-                                            <p class="desc-product"><?php echo( $product{'preview'} ); ?>
-                                            </p>
+                                            <p class="desc-product"><?php echo( $product{'preview'} ); ?></p>
                                             <div class="product-box-bottom">
                                                 <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Добавить корзину</a>
                                                 <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
@@ -123,7 +125,7 @@
                                     <div class="categories-checkbox">
                                         <ul class="categories-list-wrap">
                                             <?php foreach ($categories as $categoryItem) : ?>
-                                                <li><input type="checkbox" value="category"><label>  <?php echo($categoryItem{'name'}); ?> </label></li>
+                                                <a href="/category/<?php echo($categoryItem{'id'}); ?> "> <li><label>  <?php echo($categoryItem{'name'}); ?> </label></li> </a>
 
                                             <?php endforeach; ?>
                                         </ul>
@@ -153,7 +155,7 @@
                             </div>
                         </div>
 
-a
+
 
                     </div>
                 </div>

@@ -15,7 +15,7 @@ class ReviewsController{
         $reviewsList = array();
         $reviewsList = Reviews :: GetReviewsList();
 
-        require_once (ROOT.'/views/reviews/reviews.php');
+        require_once (ROOT.'/views/products/product-detail.php');
 
         return true;
     }
@@ -28,10 +28,35 @@ class ReviewsController{
         if($id){
             $reviewItem = Reviews:: GetReviewItemById($id);
 
-            require_once (ROOT.'/views/reviews/reviews.php');
+            require_once (ROOT.'/views/reviews/review.php');
 
         }
         return true;
     }
+
+
+
+    public function actionAdd($productId){
+
+
+        User::checkLogged();
+        $author_name = null;
+        $content = null;
+        $errors=null;
+
+        $product = Products::getProductItemById($productId);
+
+        if(isset($_POST['submit'])) {
+            $rtext = $_POST['message'];
+
+
+            Reviews::AddReview($author_name, $content);
+        }
+
+
+        if($errors!=null) $placeholder=$errors;
+        require_once ROOT.'/views/reviews/addReview.php';
+    }
+
 
 }

@@ -42,6 +42,7 @@
                                         <div class="page-nav-item"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <div class="products-categories">
@@ -124,7 +125,7 @@
                                     <div class="categories-checkbox">
                                         <ul class="categories-list-wrap">
                                             <?php foreach ($categories as $categoryItem) : ?>
-                                                <li><input type="checkbox" value="category"><label>  <?php echo($categoryItem{'name'}); ?> </label></li>
+                                                <a href="/category/<?php echo($categoryItem{'id'}); ?> "> <li><label>  <?php echo($categoryItem{'name'}); ?> </label></li> </a>
 
                                             <?php endforeach; ?>
                                         </ul>

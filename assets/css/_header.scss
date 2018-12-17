@@ -771,8 +771,8 @@ nav > ul > li.item-home .show-submenu {
   .has-mega-menu .category-drop-list {
     padding: 10px 0 0;
     .category-drop-list-inner {
-      height: 485px;
-      padding-bottom: 45px;
+      //height: 485px;
+      padding-bottom: 15px;
       > .sub-menu {
         height: calc(100% - 35px);
         overflow: hidden;

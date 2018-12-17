@@ -26,7 +26,7 @@ class ProductsController{
 
     public function actionCategory($categoryId, $page = 'page-1'){
         $page=substr($page,5,strlen($page)-1);
-        echo "page contr ".$page."/n";
+
         $categoryProducts = Products::GetProductsListByCategory($categoryId, $page);
         $categories = Category::GetCategoriesList();
 
@@ -40,21 +40,35 @@ class ProductsController{
     }
 
 
-    public function actionProduct($productId){
-
+    public function actionProduct($productId)
+    {
+        $reviewsList = Reviews::GetReviewsListById($productId);
 
         $productsItem = Products::getProductItemById($productId);
-
 
         $sliderProducts = Products::getRecommendedProducts();
 
 
+        $name = null;
+        $text = null;
 
-        require_once (ROOT.'/views/products/product-detail.php');
 
+        if (isset($_POST['submit'])) {
+            $author_name = trim($_POST['author_name']);
+            $content = trim($_POST['content']);
+
+            Reviews::addReview($author_name,$content,$productId);
+
+        }
+
+        require_once(ROOT . '/views/products/product-detail.php');
 
         return true;
     }
+
+
+
+
 
 
 

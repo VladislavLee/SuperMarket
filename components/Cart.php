@@ -130,4 +130,7 @@ class Cart
         $_SESSION['products'] = $productsInCart;
     }
 
+
+
+
 }

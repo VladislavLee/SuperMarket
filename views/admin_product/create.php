@@ -1,4 +1,4 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <section>
     <div class="container">
@@ -38,10 +38,8 @@
                         <p>Стоимость, $</p>
                         <input type="text" name="price" placeholder="" value="">
 
-
                         <p>Колличество</p>
-                        <input type="text" name="price" placeholder="" value="">
-
+                        <input type="text" name="count" placeholder="" value="">
 
                         <p>Категория</p>
                         <select name="category_id">
@@ -57,29 +55,13 @@
                         <br/><br/>
 
 
-
-                        <p>Изображение товара</p>
-                        <input type="file" name="image" placeholder="" value="">
-
-
-                        <p>Краткое содержание</p>
-                        <textarea name="description"></textarea>
-
-
-                        <p>Детальное описание</p>
-                        <textarea name="description"></textarea>
-
-                        <br/><br/>
-
                         <p>Наличие на складе</p>
-                        <select name="availability">
+                        <select name="available">
                             <option value="1" selected="selected">Да</option>
                             <option value="0">Нет</option>
                         </select>
 
                         <br/><br/>
-
-
 
                         <p>Рекомендуемые</p>
                         <select name="is_recommended">
@@ -90,12 +72,31 @@
                         <br/><br/>
 
                         <p>Статус</p>
-                        <select name="status">
+                        <select name="products_status">
                             <option value="1" selected="selected">Отображается</option>
                             <option value="0">Скрыт</option>
                         </select>
 
                         <br/><br/>
+
+
+                        <p>Изображение товара</p>
+                        <input type="file" name="image" placeholder="" value="">
+
+                        <p>Краткое описание</p>
+                        <textarea name="preview"></textarea>
+
+                        <br/><br/>
+
+                        <p>Детальное описание</p>
+                        <textarea name="description"></textarea>
+
+                        <br/><br/>
+
+
+
+
+
 
                         <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
 

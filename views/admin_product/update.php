@@ -1,4 +1,4 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <section>
     <div class="container">
@@ -27,7 +27,7 @@
                         <input type="text" name="name" placeholder="" value="<?php echo $product['name']; ?>">
 
                         <p> Колличество</p>
-                        <input type="text" name="code" placeholder="" value="<?php echo $product['count']; ?>">
+                        <input type="text" name="count" placeholder="" value="<?php echo $product['count']; ?>">
 
                         <p>Стоимость, $</p>
                         <input type="text" name="price" placeholder="" value="<?php echo $product['price']; ?>">
@@ -47,7 +47,9 @@
                         <br/><br/>
 
                         <p>Краткое описание</p>
-                        <textarea name="description"><?php echo $product['description']; ?></textarea>
+                        <textarea name="preview"><?php echo $product['preview']; ?></textarea>
+
+                        <br/><br/>
 
                         <p>Детальное описание</p>
                         <textarea name="description"><?php echo $product['description']; ?></textarea>
@@ -55,7 +57,7 @@
                         <br/><br/>
 
                         <p>Наличие на складе</p>
-                        <select name="availability">
+                        <select name="available">
                             <option value="1" <?php if ($product['available'] == 1) echo ' selected="selected"'; ?>>Да</option>
                             <option value="0" <?php if ($product['available'] == 0) echo ' selected="selected"'; ?>>Нет</option>
                         </select>
@@ -73,7 +75,7 @@
                         <br/><br/>
 
                         <p>Статус</p>
-                        <select name="status">
+                        <select name="products_status">
                             <option value="1" <?php if ($product['products_status'] == 1) echo ' selected="selected"'; ?>>Отображается</option>
                             <option value="0" <?php if ($product['products_status'] == 0) echo ' selected="selected"'; ?>>Скрыт</option>
                         </select>

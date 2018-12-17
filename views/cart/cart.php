@@ -34,9 +34,9 @@
                             <span class="amount">$<?php echo( $product{'price'} ); ?></span>
                         </td>
                         <td class="product-quantity" data-title="Qty">
-                            <div class="quantity buttons_added">
-                                <input type="text" class="input-text qty text" title="Qty" value="<?php echo $product['count']; ?>" name="qty">
-                            </div>
+
+                                <input type="text" class="input-text qty text" title="Qty" value="1" name="qty">
+
                         </td>
                         <td class="product-subtotal" data-title="Subtotal">
                             <span class="amount">$<?php echo( $totalPrice); ?></span>

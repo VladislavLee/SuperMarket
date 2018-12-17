@@ -89,13 +89,15 @@
                         <div id="comments">
                             <h2 class="review-title">2 reviews for ArchitectMade Oscar Figure</h2>
                             <ol class="commentlist">
+                                <?php foreach ($reviewsList as $reviews) :?>
+
                                 <li class="comment">
                                     <div class="comment_container">
-                                        <img alt="rev" src="assets/images/p1.jpg" width="100" height="100" class="avatar">
+<!--                                        <img alt="rev" src="/assets/images/p1.jpg" width="100" height="100" class="avatar">-->
                                         <div class="comment-text">
                                             <div class="meta">
-                                                <strong>Stuart</strong>-
-                                                <time  datetime="2013-06-07T13:01:25+00:00">June 7, 2013</time>
+                                                <strong><?php echo ($reviews{'author_name'}); ?></strong>-
+                                                <time ><?php echo ( $reviews{'date'}); ?></time>
                                                 <div class="rating" title="Rated 5 out of 5">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
@@ -105,52 +107,29 @@
                                                 </div>
                                             </div>
                                             <div class="description">
-                                                <p>This will go great with my Hoodie that I ordered a few weeks ago.</p>
+                                                <p><?php echo ($reviews{'content'}); ?></p>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="comment">
-                                    <div class="comment_container">
-                                        <img alt="rev" src="assets/images/p2.jpg" width="100" height="100" class="avatar">
-                                        <div class="comment-text">
-                                            <div class="meta">
-                                                <strong>Stuart</strong>-
-                                                <time  datetime="2013-06-07T13:01:25+00:00">June 7, 2013</time>
-                                                <div class="rating" title="Rated 5 out of 5">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                            </div>
-                                            <div class="description">
-                                                <p>This will go great with my Hoodie that I ordered a few weeks ago.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php endforeach; ?>
                             </ol>
                         </div>
                         <div id="review_form">
                             <div class="comment-respond">
-                                <h3 class="comment-reply-title">Add a review</h3>
+                                <h3 class="comment-reply-title">Добавить отзыв</h3>
                                 <form class="comment-form">
                                     <p>
                                         <label>Name</label>
-                                        <input type="text">
+                                        <input type="text" name="author_name">
                                     </p>
-                                    <p>
-                                        <label>Email</label>
-                                        <input type="email">
-                                    </p>
+
                                     <p>
                                         <label>Comment</label>
-                                        <textarea rows="3"></textarea>
+                                        <textarea id="comment" rows="3" cols="30" name="content" ></textarea>
                                     </p>
                                     <p>
-                                        <a class="button orange" href="#">Submit</a>
+                                         <input class="button orange" type="submit" name="submit" value="Отправить" />
                                     </p>
                                 </form>
                             </div>
