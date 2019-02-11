@@ -12,7 +12,7 @@ class AdminProductController extends AdminBase
     public function actionIndex(){
 
         self::checkAdmin();
-        $productsList = Products::getProductsList();
+        $productsListAdmin = Products::getProductsListAdmin();
 
         require_once(ROOT . '/views/admin_product/index.php');
         return true;
@@ -48,6 +48,7 @@ class AdminProductController extends AdminBase
             $options['available'] = $_POST['available'];
             $options['is_recommended'] = $_POST['is_recommended'];
             $options['products_status'] = $_POST['products_status'];
+
             $options['preview'] = $_POST['preview'];
             $options['description'] = $_POST['description'];
 

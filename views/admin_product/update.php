@@ -4,24 +4,21 @@
     <div class="container">
         <div class="row">
 
-            <br/>
-
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/product">Управление товарами</a></li>
-                    <li class="active">Редактировать товар</li>
-                </ol>
-            </div>
 
 
-            <h4>Редактировать товар #<?php echo $id; ?></h4>
+
+
 
             <br/>
 
-            <div class="col-lg-4">
-                <div class="login-form">
-                    <form action="#" method="post" enctype="multipart/form-data">
+            <div class="content" style="width: 43%; margin: 50px auto; ">
+                <div class="box" >
+                    <div class="box-head">
+                        <h2 class="left">Редактирование товара  #<?php echo $id; ?></h2>
+
+                    </div>
+                    <form action="#" method="post" enctype="multipart/form-data" style="padding: 20px;">
+
 
                         <p>Название товара</p>
                         <input type="text" name="name" placeholder="" value="<?php echo $product['name']; ?>">
@@ -47,12 +44,13 @@
                         <br/><br/>
 
                         <p>Краткое описание</p>
-                        <textarea name="preview"><?php echo $product['preview']; ?></textarea>
+
+                        <textarea cols="50" rows="5" name="preview"><?php echo $product['preview']; ?></textarea>
 
                         <br/><br/>
 
                         <p>Детальное описание</p>
-                        <textarea name="description"><?php echo $product['description']; ?></textarea>
+                        <textarea cols="50" rows="5" name="description"><?php echo $product['description']; ?></textarea>
 
                         <br/><br/>
 
@@ -88,10 +86,10 @@
                         <p>Изображение товара</p>
                         <img src="<?php echo Products::getImage($product['id']); ?>" width="200" alt="" />
                         <input type="file" name="image" placeholder="" value="<?php echo $product['image']; ?>">
-                        
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
-                        
                         <br/><br/>
+                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить" style="background: #1abc9c; margin-left: 5px; color: white;">
+                        
+
                         
                     </form>
                 </div>
@@ -101,5 +99,6 @@
     </div>
 </section>
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+
+<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

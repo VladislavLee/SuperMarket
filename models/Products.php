@@ -8,7 +8,7 @@
 
 class Products{
 
-    const SNOW_BY_DEFAULT= 3;
+    const SNOW_BY_DEFAULT= 6;
 
      public static function GetLatestProducts($count= self::SNOW_BY_DEFAULT ){
 
@@ -40,22 +40,146 @@ class Products{
     }
 
 
-    public static function getProductsList(){
+    public static function getProductsList($page = 1 ){
+
+        $page = intval($page);
+
+        $offset = ($page - 1) *self::SNOW_BY_DEFAULT;
 
         $db = Db::getConnection();
 
 
-        $result = $db->query('SELECT id, name, price FROM Products');
-        $productsList = array();
+
+        $queryString = 'SELECT *
+                        FROM Products WHERE products_status=1 LIMIT 12 OFFSET '.$offset;
+
+        $result = $db->query($queryString);
+
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
         $i = 0;
+        $j=0;
+        $productsList = array();
+        $productRow=array();
         while ($row = $result->fetch()) {
-            $productsList[$i]['id'] = $row['id'];
-            $productsList[$i]['name'] = $row['name'];
-            $productsList[$i]['price'] = $row['price'];
-            $i++;
+            $productRow[$j]['id'] = $row['id'];
+            $productRow[$j]['name'] = $row['name'];
+            $productRow[$j]['price'] = $row['price'];
+            $productRow[$j]['preview'] = $row['preview'];
+            $j++;
+            if($j==1){
+                $j=0;
+                $productsList[$i]=$productRow;
+                $i++;
+            }
         }
         return $productsList;
     }
+
+
+
+    public static function GetProductsListByCategory($categoryId=false ,$page = 1 )
+    {
+        if ($categoryId) {
+
+            $page = intval($page);
+            $offset = ($page - 1) * self::SNOW_BY_DEFAULT;
+
+            $db = Db::getConnection();
+
+
+
+            $queryString = 'SELECT *
+                                        FROM Products WHERE category_id=' . "'" . $categoryId . "'"
+                . ' LIMIT 8 OFFSET ' . $offset;
+
+            $result = $db->query($queryString);
+
+
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+
+            $i = 0;
+            $j = 0;
+            $productsList = array();
+            $productRow = array();
+            while ($row = $result->fetch()) {
+                $productRow[$j]['id'] = $row['id'];
+                $productRow[$j]['name'] = $row['name'];
+                $productRow[$j]['price'] = $row['price'];
+                $productRow[$j]['preview'] = $row['preview'];
+                $j++;
+                if ($j == 1) {
+                    $j = 0;
+                    $productsList[$i] = $productRow;
+                    $i++;
+                }
+            }
+            return $productsList;
+        }
+    }
+
+
+    public static function getProductsIndex( $offset){
+
+        $offset = intval($offset);
+
+
+        $db = Db::getConnection();
+
+
+        $products = array();
+
+        $queryString = 'SELECT *
+                        FROM Products WHERE products_status=1 LIMIT 8 OFFSET '.$offset;
+
+        $result = $db->query($queryString);
+
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        $i = 0;
+        $j=0;
+        $productsList = array();
+        $productRow=array();
+        while ($row = $result->fetch()) {
+            $productRow[$j]['id'] = $row['id'];
+            $productRow[$j]['name'] = $row['name'];
+            $productRow[$j]['price'] = $row['price'];
+            $productRow[$j]['preview'] = $row['preview'];
+            $j++;
+            if($j==1){
+                $j=0;
+                $productsList[$i]=$productRow;
+                $i++;
+            }
+        }
+        return $productsList;
+    }
+
+
+
+
+
+
+
+
+
+    public static function getProductsListAdmin(){
+        $db = Db::getConnection();
+        $result = $db->query('SELECT id, name, price FROM Products');
+        $productsListAdmin = array();
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $productsListAdmin[$i]['id'] = $row['id'];
+            $productsListAdmin[$i]['name'] = $row['name'];
+            $productsListAdmin[$i]['price'] = $row['price'];
+            $i++;
+        }
+        return $productsListAdmin;
+    }
+
+
+
+
 
 
     public static function deleteProductById($id)
@@ -74,19 +198,22 @@ class Products{
 
 
 
-    public static function GetProductsListByCategory($categoryId=false ,$page ){
-        if($categoryId) {
 
-            $page = intval($page);
-            $offset = ($page - 1) *self::SNOW_BY_DEFAULT;
+
+
+
+
+
+
+    public static function GetProductsListBySearch($search ){
+
+
 
             $db = Db::getConnection();
 
             $products = array();
 
-            $queryString = 'SELECT *
-                                        FROM Products WHERE category_id='."'".$categoryId."'"
-              .' LIMIT 3 OFFSET '.$page*3;
+            $queryString = "SELECT * FROM Products WHERE name LIKE '%$search%'";
 
             $result = $db->query($queryString);
 
@@ -100,10 +227,12 @@ class Products{
                 $products[$i]['preview'] = $row['preview'];
                 $i++;
             }
-        }
+
 
         return $products;
     }
+
+
 
 
     public static function getProductItemById($productId){
@@ -129,15 +258,10 @@ class Products{
 
     public static function getProductsByIds($idsArray){
         $db = Db::getConnection();
-
         $idsString = implode(',', $idsArray);
-
         $sql = "SELECT * FROM Products WHERE  id IN ($idsString)";
         $result = $db->query($sql);
-
         $result->setFetchMode(PDO::FETCH_ASSOC);
-
-
         $i = 0;
         $products = array();
         while ($row = $result->fetch()) {
@@ -152,10 +276,25 @@ class Products{
 
 
 
+
+
     public static function GetTotalProductsInCategory($categoryId){
         $db = Db::getConnection();
 
         $result = $db->query( "SELECT count(id) AS count FROM Products WHERE products_status='1' AND category_id = '$categoryId'");
+
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        $row = $result->fetch();
+        return $row['count'];
+    }
+
+
+
+    public static function GetTotalProducts(){
+        $db = Db::getConnection();
+
+        $result = $db->query( "SELECT count(id) AS count FROM Products WHERE products_status='1' ");
 
         $result->setFetchMode(PDO::FETCH_ASSOC);
 
@@ -203,7 +342,7 @@ class Products{
         $result->bindParam(':available', $options['available'], PDO::PARAM_INT);
         $result->bindParam(':is_recommended', $options['is_recommended'], PDO::PARAM_INT);
         $result->bindParam(':products_status', $options['products_status'], PDO::PARAM_INT);
-        $result->bindParam(':preview', $options['preview'], PDO::PARAM_INT);
+        $result->bindParam(':preview', $options['preview'], PDO::PARAM_STR);
         $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
 
         if ($result->execute()) {
@@ -241,7 +380,7 @@ class Products{
         $result->bindParam(':available', $options['available'], PDO::PARAM_INT);
         $result->bindParam(':is_recommended', $options['is_recommended'], PDO::PARAM_INT);
         $result->bindParam(':products_status', $options['products_status'], PDO::PARAM_INT);
-        $result->bindParam(':preview', $options['preview'], PDO::PARAM_INT);
+        $result->bindParam(':preview', $options['preview'], PDO::PARAM_STR);
         $result->bindParam(':description', $options['description'], PDO::PARAM_STR);
 
         return $result->execute();
@@ -250,17 +389,13 @@ class Products{
 
 
     public static function getImage($id){
-        $noImage = '1.jpg';
 
-        $path = '/images/products/';
+        $path = '../../upload/images/product/';
 
-        $pathToProductImage = $path . $id . '.jpg';
+        $pathToProductImage = $path .'%20'. $id . '.jpg';
 
-        if (file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProductImage)) {
-            return $pathToProductImage;
-        }
 
-        return $path . $noImage;
+        return $pathToProductImage;
     }
 
 

@@ -28,15 +28,32 @@ class CartController{
     public function actionDelete($id){
 
         Cart::deleteProduct($id);
-
         header("Location: /cart");
     }
+
+    public function actionDown($id){
+        $count = Cart::down($id);
+        if($count>0) echo $count;
+        else{
+            Cart::deleteProduct($id);
+            echo 'remove';
+        }
+
+        return true;
+    }
+
+    public function actionRemove($id){
+        echo Cart::removeByID($id);
+        return true;
+    }
+
+
+
 
 
     public function actionIndex(){
 
         $categories = Category::getCategoriesList();
-
 
         $productsInCart = Cart::getProducts();
 
@@ -93,6 +110,7 @@ class CartController{
             $userName = $user['name'];
         } else {
             $userId = false;
+            header("Location: /user/login");
         }
 
 

@@ -83,12 +83,12 @@ class Pagination
         # Получаем ограничения для цикла
         $limits = $this->limits();
 
-        $html = '<ul class="pagination">';
+        $html = '<ul class="pagination" style="margin: 0; ">';
         # Генерируем ссылки
         for ($page = $limits[0]; $page <= $limits[1]; $page++) {
             # Если текущая это текущая страница, ссылки нет и добавляется класс active
             if ($page == $this->current_page) {
-                $links .= '<li class="active"><a href="#">' . $page . '</a></li>';
+                $links .= '<li class="active"><a  href="#" style="background-color:#1abc9c; border: 1px solid #ddd; color:#ddd; ">' . $page . '</a></li>';
             } else {
                 # Иначе генерируем ссылку
                 $links .= $this->generateHtml($page);

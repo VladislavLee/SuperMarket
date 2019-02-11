@@ -7,12 +7,18 @@
  */
 
 return array(
-    'category/([0-9]+)'=> 'products/category/$1',
+
     'category/([0-9]+)/page-([0-9]+)'=> 'products/category/$1/$2',
+    'list/page-([0-9]+)'=>'products/list/$1',
+    'category/([0-9]+)'=> 'products/category/$1',
     'products/([0-9]+)' =>'products/product/$1',
-    'products'=>'products/list',
 
 
+
+    'search'=>'products/search',
+    'searchList'=>'products/SearchList',
+
+    'account/order/view/([0-9]+)' => 'cabinet/OrderOfUser/$1',
     'user/register' => 'user/register',
     'user/login' => 'user/login',
     'user/logout'=> 'user/logout',
@@ -20,8 +26,7 @@ return array(
     'account' => 'cabinet/index',
 
 
-
-
+    'about'=>'about/index',
 
     'admin/product/create' => 'adminProduct/create',
     'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
@@ -41,16 +46,17 @@ return array(
     'admin/order/delete/([0-9]+)' => 'adminOrder/delete/$1',
     'admin/order/view/([0-9]+)' => 'adminOrder/view/$1',
     'admin/order' => 'adminOrder/index',
-    'admin' => 'admin/index',
+
 
 
 
     'cart/delete/([0-9]+)' => 'cart/delete/$1',
     'cart/addAjax/([0-9]+)' => 'cart/addAjax/$1',
+    'cart/up/([0-9]+)'=>'cart/add/$1',
+    'cart/down/([0-9]+)'=>'cart/down/$1',
     'cart/checkout' => 'cart/checkout',
     'cart/clear' => 'cart/clear',
     'cart'=> 'cart/index',
-
 
 
     'main' => 'index/main',

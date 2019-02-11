@@ -6,32 +6,18 @@
     <div class="container">
         <div class="footer-bottom">
             <ul class="menu-footer-bottom">
-                <li class="menu-footer-bottom-item"><a href="#">Промоушен</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Мои заказы</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Помощь</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Карта сайта</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Сервис</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Самые популярные</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Бестселлеры</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Новые товары</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Специальные предложения</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Акции</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Наш магазин</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Скидки</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Блог</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Оплата</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Шопинг</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Возврат</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">FAQ</a></li>
-                <li class="menu-footer-bottom-item"><a href="#">Контакты</a></li>
+                <li class="menu-footer-bottom-item"><a href="/">Наш магазин</a></li>
+                <li class="menu-footer-bottom-item"><a href="/list/page-1">Товары</a></li>
+                <li class="menu-footer-bottom-item"><a href="/about">О нас</a></li>
+
             </ul>
             <div class="copyright">
                 <i class="fa fa-copyright" aria-hidden="true"></i>
-                2018 <a href="#">Bookworm</a>
+                2018 <a href="#">GuitarWorld</a>
             </div>
         </div>
     </div>
-    <a href="#" class="backtotop ts-block"><span class="pulser"> Top</span></a>
+
 </footer>
 <!--end footer-->
 <script type='text/javascript' src='/assets/js/jquery.min.js'></script>
@@ -47,17 +33,34 @@
 <script type='text/javascript' src='/assets/js/jquery.countdown.js'></script>
 <script type='text/javascript' src='/assets/js/frontend.js'></script>
 
+
 <script>
     $(document).ready(function(){
         $(".add-to-cart").click(function () {
             var id = $(this).attr("data-id");
-            $.post("/cart/addAjax/"+id, {}, function (data) {
-                $(".cart-amount").html(data);
+            $.post("/cart/addAjax/"+id, {}, function (cart) {
+                $(".shoping-cart").html(cart);
             });
             return false;
         });
     });
 </script>
+
+<script src="../../templates/js/vendor/jquery-1.11.2.min.js"></script>
+<script src="../../templates/js/vendor/bootstrap.min.js"></script>
+<script src="../../templates/js/isotope.pkgd.min.js"></script>
+<script src="../../templates/js/owl.carousel.min.js"></script>
+<script src="../../templates/js/wow.min.js"></script>
+<script src="../../templates/js/custom.js"></script>
+
+
+
+
+
+
+
+
+
 
 
 

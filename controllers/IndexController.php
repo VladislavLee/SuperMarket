@@ -11,11 +11,15 @@ class IndexController{
 
     public function actionMain(){
 
+        $sliderProducts = Products::getRecommendedProducts();
+
+        $latestProducts = Products:: getProductsIndex(0);
 
 
-        require_once(ROOT . '/views/layouts/header.php');
+
+
         require_once (ROOT.'/views/index/content.php');
-        require_once(ROOT . '/views/layouts/footer.php');
+
     }
 
 

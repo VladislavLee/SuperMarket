@@ -26,7 +26,6 @@ class AdminOrderController extends AdminBase
             $date = $_POST['date'];
             $status = $_POST['status'];
 
-            // Сохраняем изменения
             Order::updateOrderById($id, $userName, $userPhone, $userComment, $date, $status);
 
             header("Location: /admin/order/view/$id");
@@ -42,13 +41,19 @@ class AdminOrderController extends AdminBase
     {
         self::checkAdmin();
         $order = Order::getOrderById($id);
+
+
         $productsQuantity = json_decode($order['products'], true);
+
+
         $productsIds = array_keys($productsQuantity);
         $products = Products::getProductsByIds($productsIds);
-
         require_once(ROOT . '/views/admin_order/view.php');
         return true;
     }
+
+
+
 
 
     public function actionDelete($id)

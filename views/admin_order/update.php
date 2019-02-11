@@ -4,24 +4,15 @@
     <div class="container">
         <div class="row">
 
-            <br/>
-
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/order">Управление заказами</a></li>
-                    <li class="active">Редактировать заказ</li>
-                </ol>
-            </div>
 
 
-            <h4>Редактировать заказ #<?php echo $id; ?></h4>
+            <div class="content" style="width: 43%; margin: 50px auto; ">
+                <div class="box" >
+                    <div class="box-head">
+                        <h2 class="left">Редактирование заказа #<?php echo $id; ?></h2>
 
-            <br/>
-
-            <div class="col-lg-4">
-                <div class="login-form">
-                    <form action="#" method="post">
+                    </div>
+                    <form action="#" method="post" style="padding: 20px; ">
 
                         <p>Имя клиента</p>
                         <input type="text" name="userName" placeholder="" value="<?php echo $order['user_name']; ?>">
@@ -44,7 +35,8 @@
                         </select>
                         <br>
                         <br>
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить" style="background:#1abc9c;
+	color: white;">
                     </form>
                 </div>
             </div>
@@ -53,5 +45,5 @@
     </div>
 </section>
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

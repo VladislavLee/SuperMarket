@@ -8,7 +8,7 @@
 
 return array(
     'host' => 'localhost',
-    'dbname' => 'SuperMarket',
+    'dbname' => 'GuitarShop',
     'user'=>'root',
     'password'=>'root'
 );

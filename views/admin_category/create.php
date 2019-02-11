@@ -4,32 +4,14 @@
     <div class="container">
         <div class="row">
 
-            <br/>
 
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/order">Управление категориями</a></li>
-                    <li class="active">Добавить категорию</li>
-                </ol>
-            </div>
+            <div class="content" style="width: 43%; margin: 50px auto; ">
+                <div class="box" >
+                    <div class="box-head">
+                        <h2 class="left">Добавление новой категории</h2>
 
-
-            <h4>Добавить новую категорию</h4>
-
-            <br/>
-
-            <?php if (isset($errors) && is_array($errors)): ?>
-                <ul>
-                    <?php foreach ($errors as $error): ?>
-                        <li> - <?php echo $error; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-
-            <div class="col-lg-4">
-                <div class="login-form">
-                    <form action="#" method="post">
+                    </div>
+                    <form action="#" method="post" style="padding: 20px; ">
 
                         <p>Название</p>
                         <input type="text" name="name" placeholder="" value="">
@@ -45,7 +27,8 @@
 
                         <br><br>
 
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить" style="background:#1abc9c;
+	color: white;">
                     </form>
                 </div>
             </div>
@@ -55,5 +38,5 @@
     </div>
 </section>
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

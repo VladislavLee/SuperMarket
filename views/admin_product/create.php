@@ -4,20 +4,7 @@
     <div class="container">
         <div class="row">
 
-            <br/>
 
-            <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="/admin">Админпанель</a></li>
-                    <li><a href="/admin/product">Управление товарами</a></li>
-                    <li class="active">Редактировать товар</li>
-                </ol>
-            </div>
-
-
-            <h4>Добавить новый товар</h4>
-
-            <br/>
 
             <?php if (isset($errors) && is_array($errors)): ?>
                 <ul>
@@ -27,9 +14,15 @@
                 </ul>
             <?php endif; ?>
 
-            <div class="col-lg-4">
-                <div class="login-form">
-                    <form action="#" method="post" enctype="multipart/form-data">
+
+
+            <div class="content" style="width: 43%; margin: 50px auto; ">
+            <div class="box" >
+                <div class="box-head">
+                    <h2 class="left">Добавление нового товара</h2>
+
+                </div>
+                    <form action="#" method="post" enctype="multipart/form-data" style="padding: 20px;">
 
                         <p>Название товара</p>
                         <input type="text" name="name" placeholder="" value="">
@@ -84,12 +77,12 @@
                         <input type="file" name="image" placeholder="" value="">
 
                         <p>Краткое описание</p>
-                        <textarea name="preview"></textarea>
+                        <textarea cols="50" rows="5" name="preview"></textarea>
 
                         <br/><br/>
 
                         <p>Детальное описание</p>
-                        <textarea name="description"></textarea>
+                        <textarea cols="50" rows="5" name="description"></textarea>
 
                         <br/><br/>
 
@@ -98,17 +91,25 @@
 
 
 
-                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
+                        <input type="submit" name="submit" class="btn btn-default" value="Сохранить" style="background: #1abc9c; margin-left: 5px; color: white;">
 
                         <br/><br/>
 
                     </form>
-                </div>
             </div>
 
+
+            </div>
         </div>
     </div>
 </section>
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+
+
+
+
+
+
+
+<?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

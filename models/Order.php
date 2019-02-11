@@ -31,8 +31,8 @@ class Order
     }
 
 
-    public static function getOrdersList()
-    {
+    public static function getOrdersList(){
+
         $db = Db::getConnection();
 
         $result = $db->query('SELECT id, user_name, user_phone, date, status FROM product_order ORDER BY id DESC');
@@ -48,6 +48,30 @@ class Order
         }
         return $ordersList;
     }
+
+
+    public static function getOrdersListForUser($id){
+
+        $db = Db::getConnection();
+
+        $result = $db->query('SELECT * FROM product_order WHERE user_id ='.$id);
+        $ordersList = array();
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $ordersList[$i]['id'] = $row['id'];
+            $ordersList[$i]['user_name'] = $row['user_name'];
+            $ordersList[$i]['user_phone'] = $row['user_phone'];
+            $ordersList[$i]['date'] = $row['date'];
+            $ordersList[$i]['user_comment'] = $row['user_comment'];
+            $ordersList[$i]['status'] = $row['status'];
+            $i++;
+        }
+        return $ordersList;
+    }
+
+
+
+
 
 
     public static function getStatusText($status)

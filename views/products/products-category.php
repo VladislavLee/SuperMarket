@@ -1,41 +1,142 @@
-
-
 <?php require_once ROOT.'/views/layouts/header.php' ?>
 
 
     <div class="categories categories-list1">
         <div class="container">
             <div class="row">
-                <div class="content content-categorise col-md-9 has-sidebar-left">
-                    <div class="banner-categories-grid">
-                        <img src="https://www.creationsandcollections.com/app_themes/creationsandcollections/graphics/CAC_Historic&Patriotic.jpg" alt="banner" height="175" width="1170">
-                    </div>
+                <div class="content content-categorise col-md-12 has-sidebar-left">
+
                     <div class="categories-list">
                         <div class="breadcrumb-sidebar">
                             <div class="breadcrumb-wrap">
                                 <nav class="breadcrumb-trail breadcrumbs">
                                     <ul class="trail-items">
                                         <li class="trail-item trail-begin">
-                                            <a href="#"><span>Главная</span></a>
+                                            <a href="/"><span>Главная</span></a>
                                         </li>
                                         <li class="trail-item trail-end">
-                                            <span>Товары</span>
+                                            <span><?php echo ($categoryName{'name'}); ?></span>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div class="panel-categories">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="view-categories">
-                                        <div class="click-list color-active">
-                                            <i class="flaticon-squares-gallery-grid-layout-interface-symbol"></i>
+
+                        <div class="sidebar col-md-12">
+                            <div class="breadcrumb-sidebar">
+                                <div class="breadcrumb-wrap">
+                                    <nav class="breadcrumb-trail breadcrumbs">
+                                        <ul class="trail-items">
+                                            <li class="trail-item trail-begin">
+                                                <a href="#"><span>Главная</span></a>
+                                            </li>
+                                            <li class="trail-item trail-end">
+                                                <span>Товары</span>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="sidebar-categories">
+                                <div class="shop-sidebar">
+
+                                    <div class="shop-sidebar-content">
+                                        <div class="categories-sidebar">
+<!--                                            <div class="sidebar-title-section">Категории</div>-->
+                                            <div class="categories-checkbox">
+                                                <ul class="menu-main">
+                                                    <?php foreach ($categories as $categoryItem) : ?>
+                                                        <a href="/category/<?php echo($categoryItem{'id'}); ?> "> <li><label style="margin: 0; !important;">  <?php echo($categoryItem{'name'}); ?> </label></li> </a>
+                                                    <?php endforeach; ?>
+                                                </ul>
+
+
+                                            </div>
                                         </div>
+
+
+
                                     </div>
+
+
+
+                                    <style>
+                                        @import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
+                                        .menu-main {
+                                            list-style: none;
+                                            padding: 0 30px;
+                                            margin: 0;
+                                            font-size: 18px;
+                                            text-align: center;
+                                            position: relative;
+                                            background: white;
+                                        }
+                                        .menu-main:after {
+                                            content: "";
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 20px;
+                                            left: 0;
+                                            bottom: -20px;
+                                            background: radial-gradient(white 0%, white 70%, rgba(255,255,255,0) 70%, rgba(255,255,255,0) 100%) 0 -10px;
+                                            background-size: 20px 20px;
+                                            background-repeat: repeat-x;
+                                        }
+                                        .menu-main li {display: inline-block;}
+                                        .menu-main a {
+                                            text-decoration: none;
+                                            display: inline-block;
+                                            margin: 0 15px;
+                                            padding: 10px 30px;
+                                            font-family: 'PT Sans Caption', sans-serif;
+                                            color: #777777;
+                                            transition: .3s linear;
+                                            position: relative;
+                                        }
+
+                                        .menu-main a:hover{
+                                            color: #1abc9c;
+                                        }
+                                        .menu-main a:before,
+                                        .menu-main a:after {
+                                            content: "";
+                                            position: absolute;
+                                            top: calc(50% - 3px);
+                                            width: 6px;
+                                            height: 6px;
+                                            border-radius: 50%;
+                                            background: #1abc9c;
+                                            opacity: 0;
+                                            transition: .5s ease-in-out;
+                                        }
+                                        .menu-main a:before {left: 5px;}
+                                        .menu-main a:after {right: 5px;}
+                                        .menu-main a.current:before,
+                                        .menu-main a.current:after,
+                                        .menu-main a:hover:before,
+                                        .menu-main a:hover:after {opacity: 1;}
+                                        .menu-main a.current,
+                                        .menu-main a:hover {
+                                            color: #1abc9c !important;}
+                                        @media(max-width:680px) {
+                                            .menu-main li {display: block;}
+                                        }
+                                    </style>
+
+
+
                                 </div>
 
-                                <div class="col-md-3">
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="panel-categories">
+                            <div class="row">
+
+                                <div class="col-md-12">
                                     <div class="page-nav">
                                         <?php echo $pagination ->get(); ?>
                                     </div>
@@ -48,27 +149,51 @@
 
 
 
-                            <?php foreach ($categoryProducts  as $product) : ?>
-                                <div class="product-box">
-                                    <div class="product-box-content">
-                                        <figure class="img-product">
-                                            <img src="https://www.casemateipm.com/media/catalog/product/cache/1/small_image/295x/040ec09b1e35df139433887a97daa66f/9/7/9781911300618.jpg" alt="product" height="309" width="268">
-                                            <a href="#" class="flaticon-search"></a>
-                                        </figure>
-                                        <div class="product-box-text">
-                                            <a href="/products/<?php echo($product{'id'}); ?>" class="product-name"><?php echo( $product{'name'} ); ?></a>
-                                            <a href="#" class="write">Прочитать отзывы</a>
-                                            <p class="product-cost">$<?php echo( $product{'price'} ); ?></p>
-                                            <p class="desc-product"><?php echo( $product{'preview'} ); ?></p>
-                                            <div class="product-box-bottom">
-                                                <a href="#" class="add-to-cart"><i class="flaticon-commerce"></i>Добавить корзину</a>
-                                                <a href="#" class="wishlist"><i class="flaticon-like"></i></a>
-                                                <a href="#" class="refresh-product"><i class="flaticon-arrows"></i></a>
+                            <section class="featured-section">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="titie-section wow fadeInDown animated ">
+                                                <h1><?php echo ($categoryName{'name'}); ?></h1>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="row featured isotope">
+
+
+                                        <?php foreach ($categoryProducts as $productRow): ?>
+                                            <?php foreach ($productRow as $product) :?>
+                                                <div class="col-md-3 col-sm-6 col-xs-12 cat-3 featured-items isotope-item">
+
+                                                    <div class="product-item">
+                                                        <img src="<?php echo Products::getImage($product['id']); ?>" class="img-responsive" width="255" height="322" alt="">
+
+                                                        <div class="product-hover">
+                                                            <div class="product-meta">
+
+                                                                <a href="#" data-id="<?php echo $product['id']; ?>" class="add-to-cart"><i class="flaticon-commerce"></i>В корзину</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-title">
+                                                            <a href="/products/<?php echo $product['id'];?>">
+                                                                <h3><?php echo( $product{'name'} ); ?></h3>
+                                                                <span>$<?php echo( $product{'price'} ); ?></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            <?php endforeach; ?>
+                                        <?php endforeach; ?>
+
+
+
+
+                                    </div>
                                 </div>
-                            <?php endforeach; ?>
+                            </section>
 
 
 
@@ -76,93 +201,26 @@
                         </div>
                         <div class="panel-categories">
                             <div class="row">
-                                <div class="col-md-3">
-                                    <div class="view-categories">
-                                        <div class="click-grid">
-                                            <i class="flaticon-four-grid-layout-design-interface-symbol"></i>
-                                        </div>
 
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="select-categories">
 
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
+
+                                <div class="col-md-12">
                                     <div class="page-nav">
-                                        <div class="page-nav-item active">1</div>
-                                        <div class="page-nav-item">2</div>
-                                        <div class="page-nav-item">3</div>
-                                        <div class="page-nav-item"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar col-md-3">
-                    <div class="breadcrumb-sidebar">
-                        <div class="breadcrumb-wrap">
-                            <nav class="breadcrumb-trail breadcrumbs">
-                                <ul class="trail-items">
-                                    <li class="trail-item trail-begin">
-                                        <a href="#"><span>Главная</span></a>
-                                    </li>
-                                    <li class="trail-item trail-end">
-                                        <span>История</span>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="sidebar-categories">
-                        <div class="shop-sidebar">
-                            <div class="sidebar-title">Отсортировать</div>
-                            <div class="shop-sidebar-content">
-                                <div class="categories-sidebar">
-                                    <div class="sidebar-title-section">Категории</div>
-                                    <div class="categories-checkbox">
-                                        <ul class="categories-list-wrap">
-                                            <?php foreach ($categories as $categoryItem) : ?>
-                                                <a href="/category/<?php echo($categoryItem{'id'}); ?> "> <li><label>  <?php echo($categoryItem{'name'}); ?> </label></li> </a>
-
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="price-sidebar">
-                                    <div class="sidebar-title-section">Цена</div>
-                                    <div class="price-filter">
-                                        <div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                            <div class="filter-top">
-                                                <span class="amount">$1</span>
-                                                <span class="amount2">$150</span>
-                                                <a class="button orange" href="#">Поиск</a>
-                                            </div>
-                                            <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div>
-                                            <span tabindex="0" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;">
-                                            <span class="amount">1</span>
-                                        </span>
-                                            <span tabindex="0" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 100%;">
-                                        <span class="amount2">1500</span>
-                                    </span>
-                                        </div>
+                                        <?php echo $pagination ->get(); ?>
                                     </div>
                                 </div>
 
 
                             </div>
                         </div>
-
-
-
                     </div>
+                </div>
+
                 </div>
 
 
 
-                <?php require_once ROOT.'/views/layouts/icon-box.php' ?>
+
 
 
             </div>

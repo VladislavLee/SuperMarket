@@ -42,13 +42,13 @@
                 <div class="icon-box style1">
                     <div class="row">
                         <div class="col-md-4">
-                            <i class="flaticon-transport"></i>
+                            <i class="fa fa-book" aria-hidden="true"></i>
                         </div>
 
                         <div class="col-md-8">
                             <div class="icon-box-content">
-                                <h4>Доставка</h4>
-                                <p>Бесплатная доставка по все территории РФ</p>
+                                <h4>Большой выбор</h4>
+                                <p>Огромный ассортимент книг для любого читателя </p>
                             </div>
                         </div>
                     </div>

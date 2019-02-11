@@ -9,27 +9,30 @@
 
 class ProductsController{
 
-    public  function actionList(){
+    public  function actionList($page = 'page-1'){
         $categories = array();
         $categories = Category::GetCategoriesList();
 
-        $latestProducts  = array();
-        $latestProducts = Products:: GetLatestProducts(6);
 
+        $latestProducts = Products:: getProductsList($page);
+
+
+        $total = Products::GetTotalProducts();
+
+        $pagination = new Pagination($total, $page, Products::SNOW_BY_DEFAULT, 'page-');
 
         require_once(ROOT . '/views/products/products-list.php');
-
         return true;
     }
 
 
 
-    public function actionCategory($categoryId, $page = 'page-1'){
-        $page=substr($page,5,strlen($page)-1);
+    public function actionCategory($categoryId, $page = 1){
 
         $categoryProducts = Products::GetProductsListByCategory($categoryId, $page);
         $categories = Category::GetCategoriesList();
 
+        $categoryName = Category::getCategoryById($categoryId);
         $total = Products::GetTotalProductsInCategory($categoryId);
 
 
@@ -44,29 +47,55 @@ class ProductsController{
     {
         $reviewsList = Reviews::GetReviewsListById($productId);
 
+
         $productsItem = Products::getProductItemById($productId);
+
 
         $sliderProducts = Products::getRecommendedProducts();
 
 
-        $name = null;
-        $text = null;
+        $user_id = User::getUserId();
 
+        $content = null;
 
         if (isset($_POST['submit'])) {
-            $author_name = trim($_POST['author_name']);
+
             $content = trim($_POST['content']);
 
-            Reviews::addReview($author_name,$content,$productId);
-
+            Reviews::addReview($user_id,$content,$productId);
+            header("Location: /products/$productId");
         }
 
         require_once(ROOT . '/views/products/product-detail.php');
+        return true;
+    }
+
+
+
+    public  function actionSearch(){
+        echo (323423424243);
+        if (isset($_POST['enter'])) {
+            $text = trim($_POST['text']);
+            $_SESSION['search'] = $text;
+            header("Location: /searchList");
+        }
 
         return true;
     }
 
 
+    public function actionSearchList(){
+
+        $categories = array();
+        $categories = Category::GetCategoriesList();
+
+        $search = $_SESSION['search'];
+
+        $searchProducts=Products::GetProductsListBySearch($search);
+
+        require_once(ROOT . '/views/products/products-search.php');
+
+    }
 
 
 

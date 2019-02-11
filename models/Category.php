@@ -49,7 +49,7 @@ class Category{
 
 
     public static function deleteCategoryById($id){
-
+        $id = intval($id);
         $db = Db::getConnection();
 
 
@@ -85,6 +85,7 @@ class Category{
 
 
     public static function getCategoryById($id){
+
         $db = Db::getConnection();
 
         $sql = 'SELECT * FROM Category WHERE id = :id';
@@ -98,6 +99,9 @@ class Category{
 
         return $result->fetch();
     }
+
+
+
 
 
 

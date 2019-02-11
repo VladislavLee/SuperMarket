@@ -50,7 +50,7 @@ class ReviewsController{
             $rtext = $_POST['message'];
 
 
-            Reviews::AddReview($author_name, $content);
+            Reviews::AddReview($content);
         }
 
 
